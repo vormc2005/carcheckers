@@ -1,9 +1,9 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Home from "./core/Home"
-import ScheduleService from "./core/ScheduleService"
-import Contactus from "./core/Contactus"
-import OurServices from "./core/OurServices"
+import Home from "./pages/Home"
+import ScheduleService from "./pages/ScheduleService"
+import Contactus from "./pages/Contactus"
+import OurServices from "./pages/OurServices"
 
 
 function Routes() {

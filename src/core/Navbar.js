@@ -16,7 +16,8 @@ function NavbarAppComponent() {
                 <Nav.Link className="pr-4" href="/ourservices">Our Services</Nav.Link>
                 <Nav.Link className="pr-4" href="/scheduleservice">Schedule Service</Nav.Link>
                 <Nav.Link className="pr-4" href="/contactus">Contact us</Nav.Link>
-                <Nav.Link className="pr-4" href="/Admin Login">Admin Login</Nav.Link>
+                <Nav.Link className="pr-4" href="/Adminlogin">Admin Login</Nav.Link>
+                <Nav.Link className="pr-4" href="/Inquiries">Customer's Inquiries</Nav.Link>
           
     </Nav>
    

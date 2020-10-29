@@ -24,6 +24,7 @@ const InquiryState = props=>{
                 subject:"I need Honda",
                 email: "Jill@gmail.com",
                 phone: "111-111-1111",
+                year:"1999",
                 make:"Honda",
                 model:"Accord",
                 trim:"Ex",
@@ -36,6 +37,7 @@ const InquiryState = props=>{
                 subject:"I need Toyota",
                 email: "Brian@gmail.com",
                 phone: "222-222-2222",
+                year:"1999",
                 make:"Toyota",
                 model:"Camry",
                 trim:"EXL",
@@ -44,10 +46,12 @@ const InquiryState = props=>{
             },
             {
                 id:3,
+
                 name: "David Backham",
                 subject:"I need Rolls-Royce",
                 email: "db@gmail.com",
                 phone: "333-333-3333",
+                year:"1999",
                 make:"Rolse",
                 model:"Phantom",
                 trim:"Best one",

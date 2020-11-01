@@ -4,8 +4,8 @@
 .logo {
     display: inline-flex;
     font-family: 'Luckiest Guy', cursive;
-    background-color:black;
-    color:white;
+    background-color:rgb(228, 228, 228);
+    color:rgb(0, 0, 0);
     width:24vh;
     margin-left: auto;
     margin-right: auto;
@@ -28,6 +28,30 @@
     font-family: 'Nunito', sans-serif;
 
 }
+.logo-description{
+    display: block;
+    margin-left: auto;
+    margin-top: 20vh;
+
+}
+@media screen and (max-width: 600px){
+
+    #siennaPic{
+        
+        width: 100%;
+        
+     }
+}
+@media screen and (max-width: 600px){
+
+    .hide-paragraph{
+        
+       display: none;
+        
+     }
+}
+
+
 
   
 

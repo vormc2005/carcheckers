@@ -51,6 +51,19 @@
      }
 }
 
+.packages{   
+ 
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30vh;
+    border:10px solid blue;
+    height:70vh;
+    margin: 10vh;
+    text-align: left;    
+   
+}
+
 
 
   

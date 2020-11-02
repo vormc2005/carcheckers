@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "CARCHECKERS Platinum*",
+        "description": "Full mechanical and cosmetic inspection",
+        "price": "199",
+        "services": ["Exterior condition inspection","Check for signs of previous accidents and repaint", "Scanning of airbags, engine, transmission  and other components for errors", "Wear and tear condition inspection", "Interior condition check", "Car systems check (AC, Heating, Radio, etc.)", "Fluids Check", "Mechanical and electrical systems check", "Drivability check", "Check title history", "Check for liens", "Detailed report of the condition, with images"]
+
+    },
+
+    {
+        "id": 2,
+        "name": "CARCHECKERS Gold*",
+        "description": "Mechanical inspection only                                ",
+        "price": "169",
+        "services": ["Scanning of airbags, engine, transmission  and other components for errors","Wear and tear condition inspection", "Fluids Check", "Mechanical and electrical systems check", "Car systems check (AC, Heating, Radio, etc.)",  "Drivability check", "Check title history", "Check for liens", "Detailed report of the condition, with images"]
+
+    },
+    {
+        "id": 3,
+        "name": "CARCHECKERS Silver*",
+        "description": "Exterior and Interior inspections only                    ",
+        "price": "139",
+        "services": ["Exterior condition inspection","Check for signs of previous accidents and repaint",  "Wear and tear condition inspection", "Interior condition check", "Fluids Check", "Check title history", "Check for liens", "Detailed report of the condition, with images"]
+
+    }
+]

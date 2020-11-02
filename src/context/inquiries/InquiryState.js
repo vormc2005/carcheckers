@@ -3,6 +3,7 @@ import InquiryContext from './inquiryContext';
 import inquiryReducer from './inquiryReducer';
 
 
+
 import {
     GET_INQUIRIES,
     DELETE_INQUIRY,
@@ -60,10 +61,12 @@ const InquiryState = props=>{
             }
 
 
-        ]
+        ] 
+       
     };
 
     const [state, dispatch] = useReducer(inquiryReducer, initialState)
+    
   
 
 
@@ -77,7 +80,8 @@ const InquiryState = props=>{
 
 return (
     <InquiryContext.Provider value={{
-        inquiries: state.inquiries,  
+        inquiries: state.inquiries, 
+       
         
     }}>
        

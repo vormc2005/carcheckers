@@ -1,10 +1,11 @@
 import React from 'react'
 import Layout from '../core/Layout'
+import ScheduleForm from "../components/scheduleService/ScheduleForm"
 
 function ScheduleService() {
     return (
         <Layout title ='CARCHECKERS' description='Please tell us what vehicle are you looking for' className='container-fluid'>
-           <div>Home content goes here</div>
+          <ScheduleForm />
 
        </Layout>
     )

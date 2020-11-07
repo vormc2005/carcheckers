@@ -8,11 +8,14 @@ import {
     GET_INQUIRIES,
     DELETE_INQUIRY,
     UPDATE_INQUIRY,
-    CLEAR_CURRENT,
     FILTER_INQUIRIES,
     CLEAR_FILTER, 
     SET_ALERT,
-    REMOVE_ALERT
+    REMOVE_ALERT,
+    SET_SHOWMESSAGE,
+    CLEAR_SET_MESSAGE, 
+    SET_REPLY_CLICKED,
+    CLEAR_REPLY
 } from '../types'
 
 const InquiryState = props=>{
@@ -61,7 +64,10 @@ const InquiryState = props=>{
             }
 
 
-        ] 
+        ] ,
+        showMessage: null,
+        filtered: null,
+        replyClicked: null
        
     };
 
@@ -72,15 +78,61 @@ const InquiryState = props=>{
 
     //Get inquiries
 
+    
     //View One Inquiry
-
+    
     //Edit inquiry
-
+    
     //Delete Inquiry
+    const deleteInquiry = id=>{
+   
+        dispatch({type:DELETE_INQUIRY, payload:id})
+    }
+    
+    //set show message
+    const setMessage = (boolValue)=>{
+        dispatch({type:SET_SHOWMESSAGE, payload: boolValue})
+    }
+    //clear message
+    const clearMessage = (boolValue)=>{
+        dispatch({type: CLEAR_SET_MESSAGE})
+    }
+    //clear filter
+    const clearFilter = ()=>{
+        
+        dispatch({type:CLEAR_FILTER})
+    }
+    //filter inquiriies
+    const filterInquiries = text=>{
+   
+        dispatch({type:FILTER_INQUIRIES, payload:text})
+    }    
+   
+    //set reply_clicked
+    const setReply = (boolValue)=>{
+        dispatch({type:SET_REPLY_CLICKED, payload: boolValue})
+    }
+     //clear filter
+     const clearReply = ()=>{
+        
+        dispatch({type:CLEAR_REPLY})
+    }
 
 return (
     <InquiryContext.Provider value={{
         inquiries: state.inquiries, 
+        showMessage: state.showMessage,
+        filtered: state.filtered,
+        curren: state.current,
+        replyClicked: state.replyClicked,
+        setMessage,
+        clearMessage, 
+        filterInquiries, 
+        clearFilter,
+        deleteInquiry,
+        clearReply,
+        setReply
+        
        
         
     }}>

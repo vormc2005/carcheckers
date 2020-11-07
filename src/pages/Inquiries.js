@@ -1,26 +1,46 @@
 import React, {Fragment, useContext} from 'react'
-import InquiryItem from '../core/inquiry/InquiryItem';
+import InquiryItem from '../components/inquiry/InquiryItem';
 import InquiryContext from '../context/inquiries/inquiryContext'
-import Layout from '../core/Layout'
+import Layout from '../core/Layout';
+import InquiryFilter from "../components/inquiry/InquiryFilter"
 
 
 const Inquiries = () => {
 
     const inquiryContext = useContext(InquiryContext);
     // console.log(inquiryContext)
-    const {inquiries} = inquiryContext
+    const {inquiries, showMessage, filtered} = inquiryContext
     // console.log(inquiries)
+
+    if(inquiries.length === 0){
+        return (
+            <div>
+                <h2>No messages</h2>
+            </div>
+        )
+       
+    }
+
     return (
         <Fragment>
             <Layout  title ='CARCHECKERS' 
                 description='Contact page' 
                 className='container-fluid '>
-
-                {inquiries.map((inquiry)=>{
-                 return(
-                       <InquiryItem key={inquiry.id} inquiry={inquiry}/> 
+                 
+                <InquiryFilter/>  
+                {filtered !== null ?  filtered.map((inquiry)=>{
+                        return(
+                            <InquiryItem key={inquiry.id} inquiry={inquiry} showMessage={showMessage} /> 
                  )
-                })}            
+                }):inquiries.map((inquiry)=>{
+                    return(
+                        <InquiryItem key={inquiry.id} inquiry={inquiry} showMessage={showMessage} /> 
+             )
+            })
+
+            }  
+
+               
 
             </Layout>
         </Fragment>

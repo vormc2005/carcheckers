@@ -73,7 +73,7 @@ const ScheduleForm = () => {
                 <form onSubmit={formSubmit}>
                 
                 <div className="singleItem">
-                  <label htmlFor="name">Name</label>
+                  <label htmlFor="name"><strong>Your Name</strong></label>
                   <input 
                         type="text" 
                         name="name"  
@@ -83,7 +83,7 @@ const ScheduleForm = () => {
                 </div>
           
                 <div className="singleItem">
-                  <label htmlFor="email">Your email</label>
+                  <label htmlFor="email"><strong>Your E-mail</strong></label>
                   <input 
                       type="email" 
                       name="email" 
@@ -94,7 +94,7 @@ const ScheduleForm = () => {
                 </div>
           
                 <div className="singleItem">
-                  <label htmlFor="phone">Phone</label>
+                  <label htmlFor="phone"><strong>Phone</strong></label>
                   <input 
                       type="tel" 
                       name="phone" 
@@ -109,7 +109,7 @@ const ScheduleForm = () => {
                 <div className="row ml-1">
                    
                 <div className="singleItem">
-                  <label htmlFor="year">Year</label>
+                  <label htmlFor="year"><strong>Year</strong></label>
                   <input 
                         type="number" 
                         name="year" 
@@ -119,7 +119,7 @@ const ScheduleForm = () => {
                         placeholder="Vehicle year" />
                 </div>
                 <div className="singleItem ml-2">
-                  <label htmlFor="make">Make</label>
+                  <label htmlFor="make"><strong>Make</strong></label>
                   <input 
                         type="text" 
                         name="make" 
@@ -130,7 +130,7 @@ const ScheduleForm = () => {
                 </div>
 
                 <div className="singleItem ml-2">
-                  <label htmlFor="model">Model</label>
+                  <label htmlFor="model"><strong>Model</strong></label>
                   <input 
                         type="text" 
                         name="model" 
@@ -141,7 +141,7 @@ const ScheduleForm = () => {
                 </div>
 
                 <div className="singleItemml-2">
-                  <label htmlFor="trim">Trim</label>
+                  <label htmlFor="trim"><strong>Trim</strong></label>
                   <input 
                         type="text" 
                         name="trim" 
@@ -154,7 +154,7 @@ const ScheduleForm = () => {
 
 
                 <div className="singleItem">
-                  <label htmlFor="subject">Subject</label>
+                  <label htmlFor="subject"><strong>Subject</strong></label>
                   <input 
                       type="text" 
                       name="subject" 
@@ -165,7 +165,7 @@ const ScheduleForm = () => {
                 </div>
           
                 <div className="textArea singleItem">
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message"><strong>Your message</strong></label>
                   <textarea 
                     style={{height:"20vh"}}
                       name="comments" 

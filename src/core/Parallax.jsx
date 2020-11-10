@@ -1,5 +1,9 @@
-import React, {useEffect} from 'react'
-import M from 'materialize-css'
+import React, {useEffect} from 'react';
+import M from 'materialize-css';
+
+
+
+
 
 function Parallax({title, image, description}) {
 

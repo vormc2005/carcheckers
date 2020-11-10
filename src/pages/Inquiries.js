@@ -2,8 +2,14 @@ import React, {Fragment, useContext} from 'react'
 import InquiryItem from '../components/inquiry/InquiryItem';
 import InquiryContext from '../context/inquiries/inquiryContext'
 import Layout from '../core/Layout';
-import InquiryFilter from "../components/inquiry/InquiryFilter"
-import Form from "../components/scheduleService/ScgeduleService2"
+import InquiryFilter from "../components/inquiry/InquiryFilter";
+import Form from "../components/scheduleService/ScgeduleService2";
+
+
+/**
+ * *********************Inquiries page, displays all of inquiries*********************************
+ * ********************* Can only be accessed with admin login, copy of inquiry needs to be kept in second DB and e-mail****************
+ */
 
 
 const Inquiries = () => {

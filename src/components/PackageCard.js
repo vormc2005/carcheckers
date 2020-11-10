@@ -2,7 +2,10 @@ import React, {Fragment,  useState, useContext} from 'react'
 import { Link} from 'react-router-dom';
 import InquiryContext from '../context/inquiries/inquiryContext';
 
-
+/**
+ * *************************************
+ * ********************* Package card, shows available packages. Upon click it needs to take user to a from where user can fillout request, and *************************send request to MongoDB and e-mail
+ */
 
 const PackageCard = ({item}) => {
 
@@ -17,7 +20,7 @@ const PackageCard = ({item}) => {
        e.preventDefault()     
       setServiceType({
           price:price,
-          servicetype:name
+          type:name
       })
    }
     

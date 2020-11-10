@@ -3,7 +3,9 @@ import axios from 'axios';
 import ServiceTypeCard from '../scheduleService/ServiceTypeCard'
 import InquiryContext from '../../context/inquiries/inquiryContext';
 
-
+//*****************Form to send information to the back end and email**********//
+//*****************email with nodemailer
+//******************* ******************************************************/ */
 
 const ScheduleForm =()=> {
 
@@ -11,7 +13,7 @@ const ScheduleForm =()=> {
     const {addInquiry, serviceType, setServiceType} = inquiryContext;
 
   
-
+  //Initail state, useeffect gets information from setServiceType which is PackageCard.js component, link leads to a order form scheduleservice component
   const [inquiry, setInquiry] = useState({
     name: '',
     phone:"",
@@ -22,14 +24,22 @@ const ScheduleForm =()=> {
     trim:"",
     subject:"",
     comments:"",
-    type:serviceType.servicetype,
-    serviceprice: serviceType.price,
+    servicetype: null,
+    serviceprice: null,
     sent: false
   })
 
   const {name, phone , email, year, make, model, trim, comments, subject, sent}= inquiry
+ 
+  const init = ()=>{
+    setInquiry({...inquiry, servicetype: serviceType.type, serviceprice: serviceType.price})
+  }
 
-  
+
+  useEffect(() => {
+   init()
+  }, [])
+
    
     // handle inputs 
 
@@ -47,6 +57,7 @@ const ScheduleForm =()=> {
       axios.post('http://localhost:3001/api/forma', inquiry)
       .then((res)=>{       
      setInquiry({...inquiry, sent:true})
+     clearState()
     
    
         
@@ -56,39 +67,44 @@ const ScheduleForm =()=> {
         
       })
     }
-
+    // Submit form, send email, and clear state
     const onSubmit=(e)=>{
         e.preventDefault();
-        sendEmail()
         addInquiry(inquiry)
-        setServiceType({
-          price:null,
-          servicetype:null
-      })  
-        setInquiry({
-            name: '',
-            phone:"",
-            email: "",
-            year:"",
-            make:"",
-            model:"",
-            trim:"",
-            subject:"",
-            comments:"",
-            type:serviceType.servicetype,
-            serviceprice: serviceType.price,
-            sent: false
-        })
-       
+        sendEmail()
 
     }
+    const clearState =()=>{
+      
+      setServiceType({
+        type:null,
+        price:null
+    })  
+      setInquiry({
+          name: '',
+          phone:"",
+          email: "",
+          year:"",
+          make:"",
+          model:"",
+          trim:"",
+          subject:"",
+          comments:"",
+          servicetype:null,
+          serviceprice: null,
+          sent: false
+      })
+    }
+       
+
+    
 
     //clear service price and type
     
         return (
             <div className="container mb-5">            
           
-                 
+                 {/* Pass information from  */}
                   <ServiceTypeCard id={serviceType.price} serviceType={serviceType} />         
             
            

@@ -1,6 +1,15 @@
 import React, {Fragment} from 'react'
 
+/**
+ * ***********For home page**************************************
+ * ***********explanation **************************************
+ */
+
 const WhyUs = () => {
+
+
+
+
     const brokenSienna = './images/basienna.jpg'
     const saleSign = './images/Group_1.jpg'
 

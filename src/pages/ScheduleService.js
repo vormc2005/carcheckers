@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../core/Layout'
-// import ScheduleForm from "../components/scheduleService/ScgeduleService2"
+
 
 function ScheduleService() {
     return (

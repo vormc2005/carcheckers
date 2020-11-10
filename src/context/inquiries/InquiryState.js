@@ -6,13 +6,9 @@ import inquiryReducer from './inquiryReducer';
 
 import {
     ADD_INQUIRY,
-    GET_INQUIRIES,
     DELETE_INQUIRY,
-    UPDATE_INQUIRY,
     FILTER_INQUIRIES,
     CLEAR_FILTER, 
-    SET_ALERT,
-    REMOVE_ALERT,
     SET_SHOWMESSAGE,
     CLEAR_SET_MESSAGE, 
     SET_REPLY_CLICKED,
@@ -37,7 +33,7 @@ const InquiryState = props=>{
                 trim:"Ex",
                 comments:"Find my car!",
                 serviceprice: "139", 
-                type:"Basic"
+                servicetype:"Basic"
 
             },
             {
@@ -52,7 +48,7 @@ const InquiryState = props=>{
                 trim:"EXL",
                 comments:"Find my Toyota!",
                 serviceprice: "169", 
-                type:"Great"
+                servicetype:"Great"
 
             },
             {
@@ -68,7 +64,7 @@ const InquiryState = props=>{
                 trim:"Best one",
                 comments:"Find my Rolls!",
                 serviceprice: "199", 
-                type:"Best"
+                servicetype:"Best"
 
             }
 
@@ -79,8 +75,8 @@ const InquiryState = props=>{
         replyClicked: null,
         cost: null,
         serviceType: {
-            price: null,
-            servicetype: null
+            price: "None",
+            type: "Service not selected"
         }
         
         
@@ -162,9 +158,7 @@ return (
         deleteInquiry,
         clearReply,
         setReply,
-        setServiceType      
-       
-        
+        setServiceType        
     }}>
        
         {props.children}

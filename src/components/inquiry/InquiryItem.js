@@ -31,7 +31,7 @@ const InquiryItem = ({inquiry}) => {
             comments, 
             subject, 
             serviceprice,
-            type
+            servicetype
         } = inquiry
 
     
@@ -127,7 +127,7 @@ const InquiryItem = ({inquiry}) => {
                         {phone}
                     </li>
                     <li>
-                        {type}
+                        {servicetype}
                     </li>
                     <li>
                         {serviceprice}

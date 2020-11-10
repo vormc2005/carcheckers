@@ -71,9 +71,11 @@ const ScheduleForm =()=> {
           serviceprice: serviceType.price,
           sent: false
         })
+
+        //use effect to set setservice type to our state
       
         const {name, phone , email, year, make, model, trim, comments, subject, sent}= inquiry
-      
+        
         
          
           // handle inputs 

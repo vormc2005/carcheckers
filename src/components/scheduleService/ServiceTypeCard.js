@@ -1,9 +1,12 @@
 import React, {useContext} from 'react';
 
-
+//*****************************************************
+//************************************************
+// ***************card that shows price and type of the service that was selected.
+//*********************** data goes to inquiries database */ */ */
 const ServiceTypeCard = ({serviceType}) => {
 
-    const {price, servicetype}= serviceType
+    const {price, type}= serviceType
 
        return (
         <div className="card" style={{textAlign:'center'}}>         
@@ -12,7 +15,7 @@ const ServiceTypeCard = ({serviceType}) => {
     
             <ul>
             
-                <li>Service chosen: {servicetype}  </li>
+                <li>Service chosen: {type}  </li>
                 <li>Price: ${price}</li>
             
             </ul>

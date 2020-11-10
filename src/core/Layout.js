@@ -3,6 +3,12 @@ import NavbarAppComponent from './Navbar'
 import Parallax from "./Parallax"
 
 
+/**
+ * 
+ * Main layout 
+ */
+
+
 function Layout({title="Title", description="Welcome to carsearchers", className, children}) {
 
     const backgroundImage = "./images/audi.png"

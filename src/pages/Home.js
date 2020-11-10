@@ -1,7 +1,8 @@
 import React, {Fragment} from 'react'
 import Layout from '../core/Layout'
 import WhyUs from '../components/WhyUs'
-import PackageComponent from '../components/PackageComponent'
+import PackageComponent from '../components/PackageComponent';
+
 
 
 function Home() {
@@ -18,12 +19,13 @@ function Home() {
                 title ='CARCHECKERS' 
                 description='Pre-purchase inspection for your future vehicle.' className='container-fluid '>
                     <hr/>
-            <WhyUs />  
+                    <WhyUs />  
                 <hr/>
                 
           
 
             <PackageComponent />
+           
       
            
            

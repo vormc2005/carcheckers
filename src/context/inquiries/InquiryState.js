@@ -5,6 +5,7 @@ import inquiryReducer from './inquiryReducer';
 
 
 import {
+    ADD_INQUIRY,
     GET_INQUIRIES,
     DELETE_INQUIRY,
     UPDATE_INQUIRY,
@@ -15,7 +16,10 @@ import {
     SET_SHOWMESSAGE,
     CLEAR_SET_MESSAGE, 
     SET_REPLY_CLICKED,
-    CLEAR_REPLY
+    CLEAR_REPLY,
+    SET_SERVICE_TYPE, 
+    CLEAR_SERVICE_TYPE
+  
 } from '../types'
 
 const InquiryState = props=>{
@@ -32,7 +36,9 @@ const InquiryState = props=>{
                 make:"Honda",
                 model:"Accord",
                 trim:"Ex",
-                comments:"Find my car!"
+                comments:"Find my car!",
+                serviceprice: "139", 
+                type:"Basic"
 
             },
             {
@@ -45,7 +51,9 @@ const InquiryState = props=>{
                 make:"Toyota",
                 model:"Camry",
                 trim:"EXL",
-                comments:"Find my Toyota!"
+                comments:"Find my Toyota!",
+                serviceprice: "169", 
+                type:"Great"
 
             },
             {
@@ -59,7 +67,9 @@ const InquiryState = props=>{
                 make:"Rolse",
                 model:"Phantom",
                 trim:"Best one",
-                comments:"Find my Rolls!"
+                comments:"Find my Rolls!",
+                serviceprice: "199", 
+                type:"Best"
 
             }
 
@@ -67,28 +77,42 @@ const InquiryState = props=>{
         ] ,
         showMessage: null,
         filtered: null,
-        replyClicked: null
+        replyClicked: null,
+        cost: null,
+        serviceType: {
+            price: null,
+            servicetype: null
+        }
+        
+        
+      
        
     };
+
+    // Need to get state from card and link it to request*****************************
 
     const [state, dispatch] = useReducer(inquiryReducer, initialState)
     
   
+// Setcurrent contact from inquiry form
 
 
-    //Get inquiries
+    //ADD inquiries
+const addInquiry = inquiry=>{
+    dispatch({type:ADD_INQUIRY, payload: inquiry})
+}
 
-    
+   
     //View One Inquiry
-    
-    //Edit inquiry
+
     
     //Delete Inquiry
     const deleteInquiry = id=>{
    
         dispatch({type:DELETE_INQUIRY, payload:id})
     }
-    
+    //Send Email
+  
     //set show message
     const setMessage = (boolValue)=>{
         dispatch({type:SET_SHOWMESSAGE, payload: boolValue})
@@ -117,7 +141,15 @@ const InquiryState = props=>{
         
         dispatch({type:CLEAR_REPLY})
     }
-
+    //Set Service type
+    const setServiceType = (cardData)=>{
+        dispatch({type:SET_SERVICE_TYPE, payload: cardData})
+    }
+    //Clear Service Type
+    const clearServiceType = ()=>{
+        
+        dispatch({type:CLEAR_SERVICE_TYPE})
+    }
 return (
     <InquiryContext.Provider value={{
         inquiries: state.inquiries, 
@@ -125,13 +157,17 @@ return (
         filtered: state.filtered,
         curren: state.current,
         replyClicked: state.replyClicked,
+        serviceType: state.serviceType,
+        addInquiry,
         setMessage,
         clearMessage, 
         filterInquiries, 
         clearFilter,
         deleteInquiry,
         clearReply,
-        setReply
+        setReply,
+        setServiceType, 
+        clearServiceType 
         
        
         

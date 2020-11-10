@@ -1,4 +1,5 @@
 import {
+    ADD_INQUIRY,
     GET_INQUIRIES,
     DELETE_INQUIRY,
     UPDATE_INQUIRY,
@@ -9,12 +10,21 @@ import {
     SET_SHOWMESSAGE,
     CLEAR_SET_MESSAGE,
     SET_REPLY_CLICKED,
-    CLEAR_REPLY
+    CLEAR_REPLY, 
+    SET_SERVICE_TYPE,
+    CLEAR_SERVICE_TYPE
+   
 } from '../types'
 
 
 export default (state, action)=>{
     switch(action.type){
+        case ADD_INQUIRY:
+            return {
+                ...state,
+                inquiries:[...state.inquiries, action.payload]
+            }
+            return
         case SET_SHOWMESSAGE:
             return{
                 ...state,
@@ -53,6 +63,17 @@ export default (state, action)=>{
                 ...state, 
                 replyClicked: null
         }
+        case SET_SERVICE_TYPE:
+            return {
+                ...state, 
+                serviceType: action.payload
+            }
+        case CLEAR_SERVICE_TYPE:
+            return {
+                    ...state, 
+                    serviceType:null
+                }
+             
 
 
         default:

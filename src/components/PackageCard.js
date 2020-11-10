@@ -1,16 +1,28 @@
-import React, {Fragment, useContext} from 'react'
+import React, {Fragment,  useState, useContext} from 'react'
+import { Link} from 'react-router-dom';
+import InquiryContext from '../context/inquiries/inquiryContext';
 
 
 
 const PackageCard = ({item}) => {
 
-   const {id, name, description, price, services}= item;       
+   const inquiryContext = useContext(InquiryContext)
+   const {setServiceType}= inquiryContext
+
+
+
+   const {id, name, description, price, services}= item;      
+  //set state ccost and package name 
+   const onOrder =(e)=>{
+       e.preventDefault()     
+      setServiceType({
+          price:price,
+          servicetype:name
+      })
+   }
     
     return (
-<Fragment>
-   
-
-    
+<Fragment>    
     <div className="card packages" >
     <div className="card-body">
         <div style={{textAlign:"center", marginBottom:"2vh"}}>
@@ -43,8 +55,9 @@ const PackageCard = ({item}) => {
         </div>
         <div className="card-bottom" style={{height:"5vh", backgroundColor:'blue', textAlign:"center"}}>
             <button 
-                className="btn btn-danger mt-3" >
-                    Order Inspection
+                className="btn btn-danger mt-3" onClick={onOrder}>
+                    <Link style={{textDecoration:"none", color:'white'}} to="/inquiries" >Order Inspection</Link>
+                  
             </button>
         </div>       
     </div>

@@ -1,5 +1,6 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import axios from 'axios';
+import ServiceTypeCard from '../scheduleService/ServiceTypeCard'
 import InquiryContext from '../../context/inquiries/inquiryContext';
 
 
@@ -7,8 +8,9 @@ import InquiryContext from '../../context/inquiries/inquiryContext';
 const ScheduleForm =()=> {
 
     const inquiryContext = useContext(InquiryContext);
-    const {addInquiry, serviceType, clearServiceType}= inquiryContext
+    const {addInquiry, serviceType, setServiceType} = inquiryContext;
 
+  
 
   const [inquiry, setInquiry] = useState({
     name: '',
@@ -32,8 +34,7 @@ const ScheduleForm =()=> {
     // handle inputs 
 
     const handleChange = e => 
-      setInquiry({...inquiry, [e.target.name]:e.target.value})
-    
+      setInquiry({...inquiry, [e.target.name]:e.target.value})  
  
     
     
@@ -41,14 +42,12 @@ const ScheduleForm =()=> {
       fontSize: "2vh",
       fontWeight:"bold"
     }
+
     const sendEmail =()=>{
       axios.post('http://localhost:3001/api/forma', inquiry)
       .then((res)=>{       
      setInquiry({...inquiry, sent:true})
-     setServiceType({
-      price:null,
-      servicetype:null
-  })  
+   
         
       })
       .catch(()=>{
@@ -75,17 +74,25 @@ const ScheduleForm =()=> {
             serviceprice: serviceType.price,
             sent: false
         })
-        clearServiceType()
+          setServiceType({
+            price:null,
+            servicetype:null
+        })  
+       
 
     }
-      
+
+    //clear service price and type
     
         return (
+            <div className="container mb-5">            
           
-            <div className="container mb-5">
-               
-            <form onSubmit={onSubmit}>
+                 
+                  <ServiceTypeCard id={serviceType.price} serviceType={serviceType} />         
+            
            
+             
+            <form onSubmit={onSubmit}>
             
             <div className="singleItem">
               <label style={labelStyle} htmlFor="name">Name</label>
@@ -171,7 +178,10 @@ const ScheduleForm =()=> {
                 </div>
                 </div>
                 <div className="singleItem">
-                  <label style={labelStyle} htmlFor="subject"><strong>Subject</strong></label>
+                  <label 
+                        style={labelStyle}
+                         htmlFor="subject"><strong>
+                           Subject</strong></label>
                   <input 
                       type="text" 
                       name="subject" 
@@ -184,7 +194,11 @@ const ScheduleForm =()=> {
                 <div className="textArea singleItem">
                 <label style={labelStyle} htmlFor="message"><strong>Your message</strong></label>
                       {sent &&
-                        <div className="card" style={{background:"green", fontSize:"2vh", textAlign:"center"}}>Message has been sent</div>
+                        <div 
+                            className="card" 
+                            style={{background:"green", fontSize:"2vh", textAlign:"center"}}>
+                              Message has been sent
+                        </div>
           
                       } 
                   <textarea 

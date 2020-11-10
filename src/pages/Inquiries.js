@@ -3,6 +3,7 @@ import InquiryItem from '../components/inquiry/InquiryItem';
 import InquiryContext from '../context/inquiries/inquiryContext'
 import Layout from '../core/Layout';
 import InquiryFilter from "../components/inquiry/InquiryFilter"
+import Form from "../components/scheduleService/ScgeduleService2"
 
 
 const Inquiries = () => {
@@ -28,6 +29,8 @@ const Inquiries = () => {
                 className='container-fluid '>
                  
                 <InquiryFilter/>  
+                <div className="col-md-12">
+
                 {filtered !== null ?  filtered.map((inquiry)=>{
                         return(
                             <InquiryItem key={inquiry.id} inquiry={inquiry} showMessage={showMessage} /> 
@@ -39,6 +42,12 @@ const Inquiries = () => {
             })
 
             }  
+                </div>
+
+                {/* Test for adding function */}
+                <div className="col-md-12">
+                <Form/>
+                </div>
 
                
 

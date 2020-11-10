@@ -14,7 +14,8 @@ const InquiryItem = ({inquiry}) => {
             deleteInquiry,
             setReply,
             clearReply,
-            replyClicked
+            replyClicked, 
+            serviceType
              
         }=inquiryContext
 
@@ -28,7 +29,9 @@ const InquiryItem = ({inquiry}) => {
             model, 
             trim, 
             comments, 
-            subject
+            subject, 
+            serviceprice,
+            type
         } = inquiry
 
     
@@ -122,6 +125,12 @@ const InquiryItem = ({inquiry}) => {
                     </li>
                     <li>
                         {phone}
+                    </li>
+                    <li>
+                        {type}
+                    </li>
+                    <li>
+                        {serviceprice}
                     </li>
                     
                 </ul>

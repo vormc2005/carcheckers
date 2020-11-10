@@ -11,7 +11,7 @@ export const SET_REPLY_CLICKED = 'SET_REPLY_CLICKED';
 export const CLEAR_REPLY = 'CLEAR_REPLY';
 export const ADD_INQUIRY = 'ADD_INQUIRY';
 export const SET_SERVICE_TYPE = 'SET_SERVICE_TYPE';
-export const CLEAR_SERVICE_TYPE = 'CLEAR_SERVICE_TYPE';
+
 
 
 

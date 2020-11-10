@@ -47,6 +47,7 @@ const ScheduleForm =()=> {
       axios.post('http://localhost:3001/api/forma', inquiry)
       .then((res)=>{       
      setInquiry({...inquiry, sent:true})
+    
    
         
       })
@@ -60,6 +61,10 @@ const ScheduleForm =()=> {
         e.preventDefault();
         sendEmail()
         addInquiry(inquiry)
+        setServiceType({
+          price:null,
+          servicetype:null
+      })  
         setInquiry({
             name: '',
             phone:"",
@@ -74,10 +79,6 @@ const ScheduleForm =()=> {
             serviceprice: serviceType.price,
             sent: false
         })
-          setServiceType({
-            price:null,
-            servicetype:null
-        })  
        
 
     }

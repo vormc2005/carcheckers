@@ -18,8 +18,7 @@ import {
     SET_REPLY_CLICKED,
     CLEAR_REPLY,
     SET_SERVICE_TYPE, 
-    CLEAR_SERVICE_TYPE
-  
+    
 } from '../types'
 
 const InquiryState = props=>{
@@ -118,7 +117,7 @@ const addInquiry = inquiry=>{
         dispatch({type:SET_SHOWMESSAGE, payload: boolValue})
     }
     //clear message
-    const clearMessage = (boolValue)=>{
+    const clearMessage = ()=>{
         dispatch({type: CLEAR_SET_MESSAGE})
     }
     //clear filter
@@ -146,10 +145,7 @@ const addInquiry = inquiry=>{
         dispatch({type:SET_SERVICE_TYPE, payload: cardData})
     }
     //Clear Service Type
-    const clearServiceType = ()=>{
-        
-        dispatch({type:CLEAR_SERVICE_TYPE})
-    }
+   
 return (
     <InquiryContext.Provider value={{
         inquiries: state.inquiries, 
@@ -166,9 +162,7 @@ return (
         deleteInquiry,
         clearReply,
         setReply,
-        setServiceType, 
-        clearServiceType 
-        
+        setServiceType      
        
         
     }}>

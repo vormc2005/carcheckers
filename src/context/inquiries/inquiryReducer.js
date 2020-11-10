@@ -12,7 +12,7 @@ import {
     SET_REPLY_CLICKED,
     CLEAR_REPLY, 
     SET_SERVICE_TYPE,
-    CLEAR_SERVICE_TYPE
+   
    
 } from '../types'
 
@@ -68,11 +68,7 @@ export default (state, action)=>{
                 ...state, 
                 serviceType: action.payload
             }
-        case CLEAR_SERVICE_TYPE:
-            return {
-                    ...state, 
-                    serviceType:null
-                }
+       
              
 
 

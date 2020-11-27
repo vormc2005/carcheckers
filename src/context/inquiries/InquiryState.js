@@ -1,10 +1,14 @@
 import React, {useReducer} from 'react';
 import InquiryContext from './inquiryContext';
 import inquiryReducer from './inquiryReducer';
+import axios from 'axios';
 
 
 
 import {
+
+    GET_INQUIRIES,
+    INQUIRY_ERROR, 
     ADD_INQUIRY,
     DELETE_INQUIRY,
     FILTER_INQUIRIES,
@@ -16,67 +20,75 @@ import {
     SET_SERVICE_TYPE, 
     
 } from '../types'
+import Axios from 'axios';
 
 const InquiryState = props=>{
 
     const initialState ={
-        inquiries: [
-            {
-                id:1,
-                name: "Jill Johnson",
-                subject:"I need Honda",
-                email: "Jill@gmail.com",
-                phone: "111-111-1111",
-                year:"1999",
-                make:"Honda",
-                model:"Accord",
-                trim:"Ex",
-                comments:"Find my car!",
-                serviceprice: "139", 
-                servicetype:"Basic"
+        inquiries:[],
+                   /********************************************* */
+            //************Hard coded  data for testing
+            //[            
+            // {
+            //     id:1,
+            //     name: "Jill Johnson",
+            //     subject:"I need Honda",
+            //     email: "Jill@gmail.com",
+            //     phone: "111-111-1111",
+            //     year:"1999",
+            //     make:"Honda",
+            //     model:"Accord",
+            //     trim:"Ex",
+            //     comments:"Find my car!",
+            //     serviceprice: "139", 
+            //     servicetype:"Basic"
 
-            },
-            {
-                id:2,
-                name: "Brian Petersen",
-                subject:"I need Toyota",
-                email: "Brian@gmail.com",
-                phone: "222-222-2222",
-                year:"1999",
-                make:"Toyota",
-                model:"Camry",
-                trim:"EXL",
-                comments:"Find my Toyota!",
-                serviceprice: "169", 
-                servicetype:"Great"
+            // },
+            // {
+            //     id:2,
+            //     name: "Brian Petersen",
+            //     subject:"I need Toyota",
+            //     email: "Brian@gmail.com",
+            //     phone: "222-222-2222",
+            //     year:"1999",
+            //     make:"Toyota",
+            //     model:"Camry",
+            //     trim:"EXL",
+            //     comments:"Find my Toyota!",
+            //     serviceprice: "169", 
+            //     servicetype:"Great"
 
-            },
-            {
-                id:3,
+            // },
+            // {
+            //     id:3,
 
-                name: "David Backham",
-                subject:"I need Rolls-Royce",
-                email: "db@gmail.com",
-                phone: "333-333-3333",
-                year:"1999",
-                make:"Rolse",
-                model:"Phantom",
-                trim:"Best one",
-                comments:"Find my Rolls!",
-                serviceprice: "199", 
-                servicetype:"Best"
+            //     name: "David Backham",
+            //     subject:"I need Rolls-Royce",
+            //     email: "db@gmail.com",
+            //     phone: "333-333-3333",
+            //     year:"1999",
+            //     make:"Rolse",
+            //     model:"Phantom",
+            //     trim:"Best one",
+            //     comments:"Find my Rolls!",
+            //     serviceprice: "199", 
+            //     servicetype:"Best"
 
-            }
+            // }
+            //]
+            /**
+             * ********
+            ************************************************* */
 
-
-        ] ,
+        
         showMessage: null,
         filtered: null,
         replyClicked: null,
         cost: null,
         serviceType: {
-            price: "None",
-            type: "Service not selected"
+            price: "0",
+            type: "Service not selected",
+            error:  null
         }
         
         
@@ -88,13 +100,46 @@ const InquiryState = props=>{
 
     const [state, dispatch] = useReducer(inquiryReducer, initialState)
     
-  
-// Setcurrent contact from inquiry form
+//Get Contacts
+const getInquiries = async () =>{
+   
+    try{
+        const res = await axios.get('/api/inquiry' )
+        dispatch({
+            type: GET_INQUIRIES,
+            payload: res.data
+        })
+
+    }catch(err){
+        dispatch({
+
+            type: INQUIRY_ERROR,
+            payload: err.response.msg
+        })
+
+    }
+}
 
 
     //ADD inquiries
-const addInquiry = inquiry=>{
-    dispatch({type:ADD_INQUIRY, payload: inquiry})
+const addInquiry = async (inquiry)=>{
+    const config ={
+        headers:{
+            'Content-Type':'application/json'
+        }
+
+    }
+    try{
+        const res = await axios.post('/api/inquiry',inquiry, config )
+
+        dispatch({type:ADD_INQUIRY, payload: res.data})
+
+    }catch(err){
+        dispatch({
+            type:INQUIRY_ERROR,
+            payload:err.response.message
+        })
+    }
 }
 
    
@@ -102,9 +147,19 @@ const addInquiry = inquiry=>{
 
     
     //Delete Inquiry
-    const deleteInquiry = id=>{
+    const deleteInquiry = async id=>{
+        try{
+           await axios.delete(`/api/inquiry/${id}`)
+    
+           dispatch({type:DELETE_INQUIRY, payload:id})          
+    
+        }catch(err){
+            dispatch({
+                type:INQUIRY_ERROR,
+                payload:err.response.message
+            })
+        }
    
-        dispatch({type:DELETE_INQUIRY, payload:id})
     }
     //Send Email
   
@@ -147,6 +202,7 @@ return (
         inquiries: state.inquiries, 
         showMessage: state.showMessage,
         filtered: state.filtered,
+        error: state.error,
         curren: state.current,
         replyClicked: state.replyClicked,
         serviceType: state.serviceType,
@@ -158,7 +214,8 @@ return (
         deleteInquiry,
         clearReply,
         setReply,
-        setServiceType        
+        setServiceType,
+        getInquiries        
     }}>
        
         {props.children}

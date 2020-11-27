@@ -19,9 +19,9 @@ function Home() {
             <Layout       
                         title ='CARCHECKERS' 
                         description='Pre-purchase inspection for your future vehicle.' className='container-fluid '>
-                            <hr/>
+                                 <hr/>
                                 <WhyUs />  
-                        <hr/>                 
+                                <hr/>                 
 
                                 <PackageComponent />          
             

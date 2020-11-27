@@ -1,4 +1,5 @@
 export const GET_INQUIRIES = 'ADD_INQUIRIES';
+export const INQUIRY_ERROR = 'INQUIRY_ERROR';
 export const DELETE_INQUIRY = 'DELETE_INQUIRy';
 export const FILTER_INQUIRIES = 'FILTER_INQUIRIES';;
 export const CLEAR_FILTER = "CLEAR_FILTER";

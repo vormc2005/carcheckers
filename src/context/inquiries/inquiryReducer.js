@@ -1,4 +1,7 @@
 import {
+
+    GET_INQUIRIES,
+    INQUIRY_ERROR,
     ADD_INQUIRY,
     DELETE_INQUIRY,
     FILTER_INQUIRIES,
@@ -15,10 +18,17 @@ import {
 
 export default (state, action)=>{
     switch(action.type){
+        case GET_INQUIRIES:
+            return{
+                ...state,
+                inquiries: action.payload,
+                loading: false
+            }
         case ADD_INQUIRY:
             return {
                 ...state,
-                inquiries:[...state.inquiries, action.payload]
+                inquiries:[...state.inquiries, action.payload],
+                loading:false
             }
             return
         case SET_SHOWMESSAGE:
@@ -36,7 +46,7 @@ export default (state, action)=>{
                 ...state,
                         filtered: state.inquiries.filter(inquiry=>{
                             const regex = new RegExp(`${action.payload}`, 'gi');
-                            return inquiry.name.match(regex) || inquiry.phone.match(regex) || inquiry.make.match(regex)  
+                            return inquiry.name.match(regex) || inquiry.phone.match(regex) || inquiry.make.match(regex) || inquiry._id.match(regex)  
                         })
             }
         case CLEAR_FILTER:
@@ -47,7 +57,7 @@ export default (state, action)=>{
         case DELETE_INQUIRY: 
         return{
             ...state, 
-            inquiries: state.inquiries.filter(inquiry =>inquiry.id !== action.payload)
+            inquiries: state.inquiries.filter(inquiry =>inquiry._id !== action.payload)
         }
         case SET_REPLY_CLICKED:
             return{
@@ -63,6 +73,11 @@ export default (state, action)=>{
             return {
                 ...state, 
                 serviceType: action.payload
+            }
+        case INQUIRY_ERROR:
+            return {
+                ...state,
+                error:action.payload
             }
        
              

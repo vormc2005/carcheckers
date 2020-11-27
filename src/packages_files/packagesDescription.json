@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "name": "CARCHECKERS Platinum*",
+        "image": "./Images/MustangGT1-2.jpg",
+        "description": "Full mechanical and cosmetic inspection",
+        "goodFor": "If you are purchasing a vehicle that does not come with a warranty, the Platinum package would be the most beneficial for you",
+        "services": ["We use modern tools such as paint meter, OBD Scanner, battery tester, tire thread gage, and knowledge obtained after 10 years working in purchasing and retailing pre-owned vehicles to look for signs of previous accidents, mechanical and electrical issues of the vehicle","We look for body parts replacement or body repair signs", "We test and measure A/C temperature, audio, and all of the systems of the vehicle", "We check engine, transmission, drive train components, suspension, and brake systems", "We inspect the interior condition", "We inspect the exterior of the vehicle for scratches, dents, paint chips", "We look for signs of fluid leaks", "We listen to any abnormal sounds", "We measure tire tread and brake pad thickness when accessible",  "We Check title history", "We check for liens", "We provide detailed report of the condition, with images"]
+
+    },
+
+    {
+        "id": 2,
+        "name": "CARCHECKERS Gold*",
+        "image":"./Images/Mechanic_cartoon.jpg", 
+        "description": "Mechanical inspection only",
+        "goodFor":"If comfortable with the exterior and interior of the vehicle and only need a second opinion about the mechanical condition of the vehicle, we can help",
+        "services": ["We test and measure A/C temperature, audio, and all of the systems of the vehicle","We check werar and tear components", "We look for signs of fluid leaks","We Check engine, transmission, drive train components, suspension, and brake systems", "We road test cars to see if there are any noticeable issues with the drivability of the vehicle", "We check fluids level and condition where accessible",  "We listen to any abnormal sounds", "We check title history", "We check for liens", "We provide detailed report of the condition, with images"]
+
+    },
+    {
+        "id": 3,
+        "name": "CARCHECKERS Silver*",
+        "image": "./Images/AudiA4.jpg",
+        "description": "Exterior and Interior inspections only", 
+        "goodFor":"Whether you are purchasing a new vehicle or a pre-owned vehicle we recommend having the exterior of your vehicle thoroughly inspected by the CARCHECKERS team. You deserve to know if your future vehicle had been previously damaged",
+        "services": ["Why would you check new vehicles for body repairs? Often, new vehicles are damaged at the factory after it was built, or during the transportation, or on the dealership lot. Unfortunately, dealerships do not have to disclose damage to potential purchasers, unless the cost of the damage exceeds a certain limit (usually around 3% of vehicle cost). We use paint testing tools and conduct a thorough visual inspection to find there any signs of accident or damage",  "In many cases 3rd party reports such as Carfax, AutoCheck, and others do not get information about the damage that was done to the vehicle, therefore may not show damage or accident on their report. Using modern tools and experience we can spot previous body repairs", "We check Interior condition check", "Fluids Check", "We check title history", "We check for liens", "We provide detailed report of the condition, with images"]
+
+    }
+]

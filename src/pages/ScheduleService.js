@@ -1,13 +1,43 @@
-import React from 'react'
-import Layout from '../core/Layout'
+import React, {Fragment, useContext, useEffect} from 'react'
+import InquiryItem from '../components/inquiry/InquiryItem';
+import InquiryContext from '../context/inquiries/inquiryContext'
+import Layout from '../core/Layout';
+import InquiryFilter from "../components/inquiry/InquiryFilter";
+import Form from "../components/scheduleService/ScgeduleService2";
 
 
-function ScheduleService() {
+/**
+ * *********************Inquiries page, displays all of inquiries*********************************
+ * ********************* Can only be accessed with admin login, copy of inquiry needs to be kept in second DB and e-mail****************
+ */
+
+
+const ScheduleService = () => {
+
+    const inquiryContext = useContext(InquiryContext);
+    // console.log(inquiryContext)
+    
+
+    
+   
+
     return (
-        <Layout title ='CARCHECKERS' description='Please tell us what vehicle are you looking for' className='container-fluid'>
-          {/* <ScheduleForm /> */}
+        <Fragment>
+            <Layout  title ='CARCHECKERS' 
+                description='Contact page' 
+                className='container-fluid '>              
+              
+             
 
-       </Layout>
+                {/* Test for adding function */}
+                <div className="col-md-12">
+                <Form/>
+                </div>
+
+               
+
+            </Layout>
+        </Fragment>
     )
 }
 

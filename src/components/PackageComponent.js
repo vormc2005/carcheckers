@@ -10,12 +10,15 @@ const PackageComponent = () => {
                 Our Packages
             </h2>
             
+            <div className="package-div">
 
             {packages.map((item)=>{
                    return(
+
                          <PackageCard key={item.id} item={item}/> 
                    )
-                  })}            
+                  })}  
+            </div>          
         </div>
 
         

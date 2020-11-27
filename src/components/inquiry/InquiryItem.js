@@ -20,7 +20,7 @@ const InquiryItem = ({inquiry}) => {
         }=inquiryContext
 
     const {
-            id, 
+            _id, 
             name, 
             email, 
             phone, 
@@ -41,7 +41,7 @@ const InquiryItem = ({inquiry}) => {
         if(!showMessage ){
 
             setMessage(true)
-            filterInquiries(text)
+            filterInquiries(_id)
             console.log(text)
             // console.log(false)
         }
@@ -75,7 +75,7 @@ const InquiryItem = ({inquiry}) => {
  }
 
  const removeInquiry = ()=>{
-    deleteInquiry(id)
+    deleteInquiry(_id)
  }
 
  const onReply =()=>{
@@ -103,7 +103,7 @@ const InquiryItem = ({inquiry}) => {
                             className="card col-s-10" 
                             style={messageStyle}>
                                 {comments}
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem fugit facere dolorem inventore, mollitia sequi, corporis, in ad non architecto sapiente commodi ratione ipsum assumenda. Assumenda eveniet adipisci ullam totam.
+                           
                                 
                         </div>
                         </div>                          
@@ -146,7 +146,7 @@ const InquiryItem = ({inquiry}) => {
                         <div  style={commentsSectionStyle}>
 
                             {comments}
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem fugit facere dolorem inventore, mollitia sequi, corporis, in ad non architecto sapiente commodi ratione ipsum assumenda. Assumenda eveniet adipisci ullam totam.
+                            
                         </div>
                                 
                          
@@ -158,7 +158,7 @@ const InquiryItem = ({inquiry}) => {
                     <button 
                             style={{ width:"10vh", height:'5vh' }} 
                             className="btn btn-success btn-sm mr-2" 
-                            onClick={()=>switchShowMessage(id)}>{!showMessage ? "View message" : "Clear message"}</button>
+                            onClick={()=>switchShowMessage(_id)}>{!showMessage ? "View message" : "Clear message"}</button>
                 
                    {replyClicked===null &&
                    <button

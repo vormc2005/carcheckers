@@ -1,38 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
-.logo {
+/* colors */
+
+:root {
+  --blue-colors: #1616f2;
+  --small-font: 2vh;
+}
+
+
+
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+
+
+  p, li, h1, h2, h3, h4, h5, h6{
+    font-family: 'Open Sans', sans-serif;
+    /* font-weight: bold; */
+  }
+   /* h1,h1, h2, h3, h4{
+    font-weight: bolder;
+  } */
+   li.whyus-li-style{
+    font-weight: bold;
+  } 
+
+/* Home page CSS  */
+.packages{   
+ 
     display: inline-flex;
-    font-family: 'Luckiest Guy', cursive;
-    background-color:rgb(228, 228, 228);
-    color:rgb(0, 0, 0);
-    width:24vh;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 45% 0 45% 0;
-    padding-left: 0.7vh;
-    
-  
+    width: 40vh;
+    border:10px solid var(--blue-colors);
+    height:75vh;
+    margin-left: 5vh;   
+    text-align: left;    
+   
 }
-.fas.fa-copyright{
-    margin-right: 2vh;
-    margin-top: 1vh;
-}
+@media screen and (max-width: 600px){
 
-.headfont{
-    font-family: 'Nunito', sans-serif;
-}
-
-.pr-4{
-   color:white ;
-    font-family: 'Nunito', sans-serif;
-
-}
-.logo-description{
-    display: block;
+  .packages{
+      
+    display: inline-flex;
     margin-left: auto;
-    margin-top: 20vh;
-
+    margin-right: auto;
+    width: 40vh;
+    border:10px solid var(--blue-colors);
+    height:75vh;    
+    text-align: left;    
+      
+   }
+}
+.package-div{
+margin-right: 10vh;
+margin-bottom: 10vh;
+}
+.hide-paragraph{
+  font-weight: normal;
 }
 @media screen and (max-width: 600px){
 
@@ -51,19 +89,171 @@
      }
 }
 
-.packages{   
- 
-    display: inline-flex;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30vh;
-    border:10px solid blue;
-    height:70vh;
-    margin: 10vh;
-    text-align: left;    
-   
+
+/* Login page CSS  */
+
+
+.btn-primary{
+    background-image: none;
 }
 
+/* *****************************Our services page CSS ********************* */
+.grid-container {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-template-columns: 40% 50%;
+  /* background-color: #2196F3; */
+  padding: 10px;
+  margin-top: 2vh;
+}
+@media screen and (max-width: 900px){
+
+  .grid-container{
+      
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: 100%;
+    /* background-color: #2196F3; */
+    padding: 10px;
+      
+   }
+}
+
+/* image itself */
+img#service-image{
+  width:100%;
+  padding: 2%;
+ 
+ 
+}
+.grid-item.image-class{
+  
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: fit-content;
+  font-size: 30px;
+  text-align: center;   
+  position: relative; 
+  border-radius: 2%;
+  border: black 5px solid; 
+  margin-top: 2v;   
+
+}
+.service-li-items{
+  font-size: 1.8vh; 
+}
+/* .grid-item.text{
+  margin-top: auto;
+  margin-bottom: auto;
+} */
+
+/* Navbar css */
+.myNavBar{
+  height: fit-content;
+}
+
+
+.mr-auto{     
+    margin-left: 65%;
+    
+}
+
+
+
+.pr-4{
+    color: rgb(0, 0, 0);
+    margin-left:1.5vw;
+    z-index: 10; 
+    padding-left: 1.4vw;  
+   
+  
+}
+
+@media screen and (max-width: 1000px){
+
+  .pr-4{
+      
+      background-color: aliceblue;
+      width: 30vw;
+      padding-left: 3vw;
+  
+      
+   }
+}
+@media screen and (max-width: 1000px){
+
+  .pr-4{
+      
+      background-color: aliceblue;
+      width: 30vw;
+      padding-left: 3vw;
+  
+      
+   }
+}
+
+.pr-4:hover{
+    color: black;
+    text-decoration: none;
+    background-color: rgb(218, 218, 218);
+    
+   
+  
+}
+.navbar-toggler-icon:hover{
+   background-color: rgba(107, 107, 107, 0.808);
+}
+
+
+
+/* Logo CSS parallax */
+.logo {
+  display: inline-flex;
+  font-family: 'Luckiest Guy', cursive;
+  background-color:rgb(228, 228, 228);
+  color:rgb(0, 0, 0);
+  width:24vh;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 45% 0 45% 0;
+  padding-left: 0.7vh;
+  
+  
+
+}
+.fas.fa-copyright{
+  margin-right: 2vh;
+  margin-top: 1vh;
+}
+
+.headfont{
+  font-family: 'Nunito', sans-serif;
+}
+
+
+.logo-description{
+  
+  display: block;
+  margin-left: auto;
+  margin-top: 20vh;
+  
+
+}
+
+/* *********************Package card CSS */
+.package-link-description{
+  margin-bottom: 1vh;
+  text-align:center;
+   bottom:0px;
+}
+.card-bottom{
+  height:5vh;
+   background-color:var(--blue-colors);
+    text-align:center;
+}
+.smallFont{
+  font-size: var(--small-font);
+}
 
 
   

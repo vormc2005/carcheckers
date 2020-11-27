@@ -10,6 +10,7 @@ import Register from "./pages/auth/Register"
 import Login from "./pages/auth/Login"
 import setAuthToken from './utils/setAuthToken'
 // import Alerts from './core/Alert'
+import PrivateRoute from './components/routing/PrivateRoute'
 
 import InquiryState from './context/inquiries/InquiryState';
 import AuthState from "./context/auth/AuthState";
@@ -33,8 +34,8 @@ function Routes() {
                 <Route path="/ourservices" exact component={OurServices} />
                 <Route path="/contactus" exact component={Contactus} />
                 <Route path="/scheduleservice" exact component={ScheduleService} />
-                <Route path="/inquiries" exact component={Inquiries} />
-                <Route path="/register" exact component={Register} />
+                <PrivateRoute path="/inquiries" exact component={Inquiries} />
+                <PrivateRoute path="/register" exact component={Register} />
                 <Route path="/login" exact component={Login} />
 
             </Switch>

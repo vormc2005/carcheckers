@@ -40,7 +40,7 @@ const PackageCard = ({item}) => {
             className="mt-4 mb-2">
                 ${price} 
             <span>
-                <small className="smallFont" style={{fontSize:"2vh"}}>/per vehicle</small>
+                <small className="smallFont" >/per vehicle</small>
             </span>
         </h1>
         </div>
@@ -53,13 +53,13 @@ const PackageCard = ({item}) => {
         </dl>
        
     </div>
-    <div className="package-link-description" style={{textAlign:'center', bottom:"0px"}}>
-            <link rel="stylesheet" href=""/>Link
+    <div className="package-link-description">
+            <Link rel="stylesheet" to="/ourservices">More Information </Link>
         </div>
-        <div className="card-bottom" style={{height:"5vh", backgroundColor:'blue', textAlign:"center"}}>
+        <div className="card-bottom" >
             <button 
                 className="btn btn-danger mt-3" onClick={onOrder}>
-                    <Link style={{textDecoration:"none", color:'white'}} to="/inquiries" >Order Inspection</Link>
+                    <Link style={{textDecoration:"none", color:'white'}} to="/scheduleservice" >Order Inspection</Link>
                   
             </button>
         </div>       
